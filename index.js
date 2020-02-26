@@ -28,7 +28,8 @@ function init() {
             },
         ])
         .then(function (response) {
-            console.log(api.getUser(response.username));
+            let user = api.getUser(response.username);
+            console.log(user);
         });
 }
 
