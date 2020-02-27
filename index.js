@@ -1,14 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const api = require("./utils/api");
-const generateMarkdown = require("./utils/generateMarkdown");
+
+const markdown = require("./utils/generateMarkdown");
 
 
 const questions = [
     "What is your Github username?", 
     "What is the title of this project?",
     "What is the description of this project?",
-    "What is the Table of Contents for this project?",
     "What is the Installation guide for this project? (leave empty if none)",
     "What is the usage guide for this project?",
     "License?",
@@ -42,21 +41,16 @@ function init() {
             {
                 type: "input",
                 message: questions[3],
-                name: "toc"
-            },
-            {
-                type: "input",
-                message: questions[4],
                 name: "installation"
             },
             {
                 type: "input",
-                message: questions[5],
+                message: questions[4],
                 name: "usage"
             },
             {
                 type: "list",
-                message: questions[6],
+                message: questions[5],
                 name: "license",
                 choices: [
                     "MIT",
@@ -69,25 +63,23 @@ function init() {
             },
             {
                 type: "input",
-                message: questions[7],
+                message: questions[6],
                 name: "contributors"
             },
             {
                 type: "input",
-                message: questions[8],
+                message: questions[7],
                 name: "tests"
             },
             {
                 type: "input",
-                message: questions[9],
+                message: questions[8],
                 name: "questions"
             },
         ])
         .then(function (response) {
-            //get Github into
-            let user = api.getUser(response.username);
-            console.log(user);
-            
+            const newReadme = markdown(response);
+            console.log(newReadme);
         });
 }
 

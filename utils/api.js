@@ -6,25 +6,41 @@ const api = {
       getUser: async function getUser(username) {
           const response = axios
           .get('https://api.github.com/users/' + username)
+
+
+
           .then (function(response) {
             let userObj = {
               username: response.data.login,
               email: response.data.email,
               avatar: response.data.avatar_url
             }
-            //console.log(userObj);
             return userObj;
           }) 
-          // .fail (function (error) {
-          //   if (error.response.status === '404'){
-          //     console.log("Username not found");
-          //   }
-          //   else{
-          //     console.log("Error: " + error.response.statusText)
-          //   }
-          // }) 
       }
     };
+
+
+
+    const gitAPIRequest = (username) => {
+      try{
+        return axios.get('https://api.github.com/users/' + username)
+      } catch (error) {
+    console.error(error)
+    }}
+
+    const user = async (username) => {
+      const userInfo = gitAPIRequest(username)
+      .then(response => {
+        let userObj = {
+          username: response.data.login,
+          email: response.data.email,
+          avatar: response.data.avatar_url
+        }
+        console.log(userObj);
+        return userObj;
+      })
+    }
+
     
     module.exports = api;
-    
