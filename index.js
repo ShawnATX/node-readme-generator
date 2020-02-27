@@ -12,12 +12,14 @@ const questions = [
     "What is the usage guide for this project?",
     "License?",
     "Contributing authors?",
-    "Tests for this project?",
-    "Questions"
-
+    "Tests for this project?"
 ];
 
-function writeToFile(fileName, data) {
+const writeToFile = (fileName, data) =>  {
+    fs.writeFile(fileName, data, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    })
 }
 
 function init() {
@@ -70,16 +72,11 @@ function init() {
                 type: "input",
                 message: questions[7],
                 name: "tests"
-            },
-            {
-                type: "input",
-                message: questions[8],
-                name: "questions"
-            },
+            }
         ])
         .then(function (response) {
             const newReadme = markdown(response);
-            console.log(newReadme);
+            writeToFile("./testfile/Readme.md", newReadme);
         });
 }
 

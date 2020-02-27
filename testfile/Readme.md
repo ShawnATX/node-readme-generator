@@ -4,7 +4,7 @@
   ## Description
 
   ![Repo commit](https://img.shields.io/github/last-commit/shawnatx/node-readme-generator)
-  undefined
+  Description
   
   ## Table of Contents
 
@@ -18,26 +18,26 @@
 
   ## Installation
 
-  undefined
+  npm i
 
   ## Usage
 
-  undefined
+  use it well
 
   ## License
 
-  undefined
+  MIT
 
   ## Contributors
 
-  undefined
+  none
 
   ## Tests
 
-  Test1, Test2
+  test1, test2
 
   ## Questions
 
-  ### zen
+  ### shawnatx
   
   
