@@ -41,5 +41,5 @@ none
 
 ### ShawnATX
 ![Image of ShawnATX](https://avatars2.githubusercontent.com/u/37752327?v=4)
-#### Email: null
+#### Email: User email is private
 

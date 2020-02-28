@@ -10,10 +10,17 @@ const gitAPIRequest = (username) => {
 
 const api = async function(username) {
   try{
+    let email;
     const userInfo = await gitAPIRequest(username);
+    if(userInfo.data.email === null){
+      email = "User email is private"
+    }
+    else{
+      email = userInfo.data.email;
+    }
     let userObj = {
       username: userInfo.data.login,
-      email: userInfo.data.email,
+      email: email,
       avatar: userInfo.data.avatar_url
     }
     return userObj;
