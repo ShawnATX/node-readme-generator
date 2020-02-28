@@ -1,46 +1,45 @@
 
-  # Node-Readme-Generator
+# node-readme-generator
 
-  ## Description
+## Description
 
-  ![Repo commit](https://img.shields.io/github/last-commit/ShawnATX/Node-Readme-Generator)
+![Repo commit](https://img.shields.io/github/last-commit/ShawnATX/node-readme-generator)
 
-  This is a node app which can help generate a well formatted Readme.md file for use with github repositories.
-  
-  ## Table of Contents
+This node app will help generate a well formatted Readme.md file for your github repo, including sections for description, installation, usage, contributors, license, and contact information
 
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contributors](#contributors)
-  * [Tests](#tests)
-  * [Questions](#questions)
-  
+## Table of Contents
 
-  ## Installation
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributors](#contributors)
+* [Tests](#tests)
+* [Questions](#questions)
 
-  npm install
 
-  ## Usage
+## Installation
 
-  run this app with node index.js
+npm i
 
-  ## License
+## Usage
 
-  ISC
+Run with node index.js
 
-  ## Contributors
+## License
 
-  @shawnatx
+ISC
 
-  ## Tests
+## Contributors
 
-  none
+@shawnatx
 
-  ## Questions
+## Tests
 
-  ### ShawnATX
-  ![Image of ShawnATX](https://avatars2.githubusercontent.com/u/37752327?v=4)
-  #### Email: null
-  
-  
+none
+
+## Questions
+
+### ShawnATX
+![Image of ShawnATX](https://avatars2.githubusercontent.com/u/37752327?v=4)
+#### Email: null
+
