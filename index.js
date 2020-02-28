@@ -17,7 +17,6 @@ const questions = [
 const writeToFile = (fileName, data) =>  {
     fs.writeFile(fileName, data, function (err) {
         if (err) throw err;
-        console.log('Readme saved!');
     })
 }
 

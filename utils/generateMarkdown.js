@@ -3,51 +3,51 @@
 const generateMarkdown = (answers, userObj) => {
 
   return `
-  # ${answers.title}
+# ${answers.title}
 
-  ## Description
+## Description
 
-  ![Repo commit](https://img.shields.io/github/last-commit/${userObj.username}/${answers.title})
+![Repo commit](https://img.shields.io/github/last-commit/${userObj.username}/${answers.title})
 
-  ${answers.description}
-  
-  ## Table of Contents
+${answers.description}
 
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contributors](#contributors)
-  * [Tests](#tests)
-  * [Questions](#questions)
-  
+## Table of Contents
 
-  ## Installation
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributors](#contributors)
+* [Tests](#tests)
+* [Questions](#questions)
 
-  ${answers.installation}
 
-  ## Usage
+## Installation
 
-  ${answers.usage}
+${answers.installation}
 
-  ## License
+## Usage
 
-  ${answers.license}
+${answers.usage}
 
-  ## Contributors
+## License
 
-  ${answers.contributors}
+${answers.license}
 
-  ## Tests
+## Contributors
 
-  ${answers.tests}
+${answers.contributors}
 
-  ## Questions
+## Tests
 
-  ### ${userObj.username}
-  ![Image of ${userObj.username}](${userObj.avatar})
-  #### Email: ${userObj.email}
-  
-  `;
+${answers.tests}
+
+## Questions
+
+### ${userObj.username}
+![Image of ${userObj.username}](${userObj.avatar})
+#### Email: ${userObj.email}
+
+`;
 }
 
 
