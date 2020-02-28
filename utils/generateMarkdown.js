@@ -1,27 +1,15 @@
-const api = require("./api");
-
-//data object holds properties: username, title, description
+//answers object holds properties: username, title, description
 //installation, usage, license, contributors, tests, questions
-const generateMarkdown = (data) => {
-  //console.log(data);
-  
-  //get Github info
-  let gitAPIPromise = new Promise((resolve, reject) => {
-    let user = api(data.username);
-    console.log(user);
-  });
-  gitAPIPromise.then((resolve) => {
-    console.log(resolve);
-  });
+const generateMarkdown = (answers, userObj) => {
 
-
-    return `
-  # ${data.title}
+  return `
+  # ${answers.title}
 
   ## Description
 
-  ![Repo commit](https://img.shields.io/github/last-commit/shawnatx/node-readme-generator)
-  ${data.description}
+  ![Repo commit](https://img.shields.io/github/last-commit/${userObj.username}/${answers.title})
+
+  ${answers.description}
   
   ## Table of Contents
 
@@ -35,32 +23,33 @@ const generateMarkdown = (data) => {
 
   ## Installation
 
-  ${data.installation}
+  ${answers.installation}
 
   ## Usage
 
-  ${data.usage}
+  ${answers.usage}
 
   ## License
 
-  ${data.license}
+  ${answers.license}
 
   ## Contributors
 
-  ${data.contributors}
+  ${answers.contributors}
 
   ## Tests
 
-  ${data.tests}
+  ${answers.tests}
 
   ## Questions
 
-  ### ${data.username}
+  ### ${userObj.username}
+  ![Image of ${userObj.username}](${userObj.avatar})
+  #### Email: ${userObj.email}
   
   `;
 }
-// ![Image of ${data.username}](${userImage})
 
 
-  module.exports = generateMarkdown;
+module.exports = generateMarkdown;
   

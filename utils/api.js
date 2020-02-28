@@ -6,37 +6,20 @@ const gitAPIRequest = (username) => {
   } catch (error) {
     console.error(error)
   }
-}  
-
-const api = async (username) => {
-  const userInfo = gitAPIRequest(username)
-  .then(response => {
-    let userObj = {
-      username: response.data.login,
-      email: response.data.email,
-      avatar: response.data.avatar_url
-    }
-    //console.log(userObj);
-    return userObj;
-  })
 }
 
-
+const api = async function(username) {
+  try{
+    const userInfo = await gitAPIRequest(username);
+    let userObj = {
+      username: userInfo.data.login,
+      email: userInfo.data.email,
+      avatar: userInfo.data.avatar_url
+    }
+    return userObj;
+  }catch(err){
+    console.log(err);
+  }
+}
   
-  module.exports = api;
-
-
-
-
-    // const getUser = async () => {
-    //   const userInfo = gitAPIRequest()
-    //   .then(response => {
-    //     let userObj = {
-    //       username: response.data.login,
-    //       email: response.data.email,
-    //       avatar: response.data.avatar_url
-    //     }
-    //     // console.log(userObj);
-    //     return userObj;
-    //   })
-    // }
+module.exports = api;
